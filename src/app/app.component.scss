@@ -1,0 +1,20 @@
+:host {
+
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 2.6fr 0.2fr;
+    height: 100%;
+
+    .Header {
+      grid-area: 1 / 1 / 2 / 4;
+    }
+    .Body {
+      grid-area: 2 / 1 / 3 / 2;
+    }
+    .footer {
+      grid-area: 3 / 1 / 4 / 2;
+    }
+  }
+}
