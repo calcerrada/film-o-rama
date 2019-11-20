@@ -29,8 +29,10 @@
             ],
             "styles": [
               "src/styles/styles.scss",
-              "src/styles/normalize.css"
-
+              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
+              "src/styles/vendors/normalize.css",
+              "src/styles/fonts.scss",
+              "src/styles/custom-reset.scss"
             ],
             "scripts": []
           },
@@ -95,7 +97,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
+              "src/styles/styles.scss",
+              "src/styles/vendors/normalize.css"
             ],
             "scripts": []
           }
@@ -126,6 +130,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "film-o-rama"
 }

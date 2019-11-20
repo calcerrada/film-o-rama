@@ -1,7 +1,10 @@
+@import '../styles/utils/colors.scss';
+
+
 :host {
 
-
   .grid-container {
+    background-color: $background;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 0.2fr 2.6fr 0.2fr;

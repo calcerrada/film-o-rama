@@ -1,1 +1,23 @@
-<p>login works!</p>
+<div class="login-wrapper">
+  <div class="login mat-elevation-z1">
+    <div class="login__header">
+      <i class="material-icons"> account_circle </i>
+      <p>LOGIN</p>
+    </div>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login__form">
+      <mat-form-field>
+        <input matInput placeholder="Username" formControlName="username" />
+        <mat-error *ngIf="loginForm.get('username').hasError('required')">
+          username is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Password" formControlName="password" />
+        <mat-error *ngIf="loginForm.get('password').hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary">GO!</button>
+    </form>
+  </div>
+</div>
