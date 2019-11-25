@@ -1,16 +1,9 @@
+import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {
-  HttpRequest,
-  HttpResponse,
-  HttpHandler,
-  HttpEvent,
-  HttpInterceptor,
-  HTTP_INTERCEPTORS
-} from '@angular/common/http';
+import { User } from '@shared/models/user.model';
 import { Observable, of, throwError } from 'rxjs';
-import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
+import { delay, dematerialize, materialize, mergeMap } from 'rxjs/operators';
 
-import { User } from '@shared/models/user';
 
 const users: User[] = [
   {
@@ -89,10 +82,3 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     }
   }
 }
-
-export let fakeBackendProvider = {
-  // use fake backend in place of Http service for backend-less development
-  provide: HTTP_INTERCEPTORS,
-  useClass: FakeBackendInterceptor,
-  multi: true
-};
