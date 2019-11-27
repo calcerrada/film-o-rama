@@ -3,6 +3,7 @@ import { SharedModule } from '@shared/shared.module';
 
 import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './login.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -10,7 +11,8 @@ import { LoginComponent } from './login.component';
   declarations: [LoginComponent],
   imports: [
     SharedModule,
-    LoginRoutingModule
+    LoginRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class LoginModule { }

@@ -10,16 +10,16 @@ import { User } from '@shared/models/user.model';
 })
 export class AuthService {
   private currentUserSubject: BehaviorSubject<User>;
-  public currentUser: Observable<User>;
+  currentUser: Observable<User>;
 
   constructor(private http: HttpClient) {
     this.currentUserSubject = new BehaviorSubject<User>(
-      JSON.parse(localStorage.getItem('currentUser'))
+      JSON.parse(sessionStorage.getItem('currentUser'))
     );
     this.currentUser = this.currentUserSubject.asObservable();
   }
 
-  public get currentUserValue(): User {
+  get currentUserValue(): User {
     return this.currentUserSubject.value;
   }
 
@@ -28,7 +28,7 @@ export class AuthService {
       .post<any>(`/users/authenticate`, { username, password })
       .pipe(
         map(user => {
-          localStorage.setItem('currentUser', JSON.stringify(user));
+          sessionStorage.setItem('currentUser', JSON.stringify(user));
           this.currentUserSubject.next(user);
           return user;
         })
@@ -36,7 +36,7 @@ export class AuthService {
   }
 
   logout() {
-    localStorage.removeItem('currentUser');
+    sessionStorage.removeItem('currentUser');
     this.currentUserSubject.next(null);
   }
 }

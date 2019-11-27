@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { FilmsComponent } from './films.component';
+import { SeekerComponent } from './containers/seeker/seeker.component';
 
-const routes: Routes = [{ path: '', component: FilmsComponent }];
+const routes: Routes = [
+  { path: '', redirectTo: 'seeker' },
+  { path: 'seeker', component: SeekerComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

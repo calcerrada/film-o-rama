@@ -1,24 +1,28 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
-import { ReactiveFormsModule } from '@angular/forms';
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+
 
 @NgModule({
   imports: [
     CommonModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule,
+    PerfectScrollbarModule
   ],
   exports: [
     CommonModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule,
+    PerfectScrollbarModule
   ]
 })
 export class SharedModule {}

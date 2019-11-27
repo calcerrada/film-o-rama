@@ -35,8 +35,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('submit');
-
     this.submitted = true;
 
     if (this.loginForm.invalid) {
@@ -48,9 +46,7 @@ export class LoginComponent implements OnInit {
       .login(this.loginForm.get('username').value, this.loginForm.get('password').value)
       .pipe(first())
       .subscribe(
-        data => {
-          console.log('loged');
-
+        () => {
           this.router.navigate(['/']);
         },
         error => {

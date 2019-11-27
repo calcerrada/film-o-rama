@@ -1,21 +1,26 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import { SharedModule } from '@shared/shared.module';
+import { SeekerComponent } from './containers/seeker/seeker.component';
 
 import { FilmsRoutingModule } from './films-routing.module';
 import { FilmsComponent } from './films.component';
-import { StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
-import * as fromFilm from './store/film.reducer';
 import { FilmEffects } from './store/film.effects';
-import { SeekerComponent } from './containers/seeker/seeker.component';
+import * as fromFilm from './store/film.reducer';
+import { FilmCardComponent } from './containers/seeker/components/film-card/film-card.component';
+
+
 
 
 
 @NgModule({
-  declarations: [FilmsComponent, SeekerComponent],
+  declarations: [FilmsComponent, SeekerComponent, FilmCardComponent],
   imports: [
-    CommonModule,
+    SharedModule,
     FilmsRoutingModule,
+    FormsModule,
     StoreModule.forFeature(fromFilm.filmFeatureKey, fromFilm.reducer),
     EffectsModule.forFeature([FilmEffects]),
   ]

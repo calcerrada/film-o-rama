@@ -1,0 +1,22 @@
+@import '../../../../../../styles/utils/colors.scss';
+
+.film-card {
+  border: 1px solid $grey;
+
+  .mat-card-header-text {
+    width: calc(100% - 2rem);
+  }
+
+  .mat-card-title {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  img {
+    max-height: 27rem;
+    min-height: 27rem;
+  }
+}
+
+
