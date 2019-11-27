@@ -3,6 +3,10 @@
 .film-card {
   border: 1px solid $grey;
 
+  .mat-card-header{
+    width: 85%;
+  }
+
   .mat-card-header-text {
     width: calc(100% - 2rem);
   }
@@ -11,6 +15,11 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+  }
+  .mat-icon-button{
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
   }
 
   img {

@@ -1,6 +1,6 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, HostBinding } from '@angular/core';
+import { animate, style, transition, trigger } from '@angular/animations';
+import { ChangeDetectionStrategy, Component, EventEmitter, HostBinding, Input, Output } from '@angular/core';
 import { Film } from 'src/app/films/models/film.model';
-import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-film-card',
@@ -20,16 +20,16 @@ import { trigger, transition, style, animate } from '@angular/animations';
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FilmCardComponent implements OnInit {
+export class FilmCardComponent {
   @Input() film: Film;
-  @Output() addFavotite: EventEmitter<string> = new EventEmitter();
-  @Output() viewDetial: EventEmitter<string> = new EventEmitter();
+  @Input() favorite: boolean;
+  @Output() addToFavorite: EventEmitter<Film> = new EventEmitter();
+  @Output() viewDetial: EventEmitter<Film> = new EventEmitter();
   @HostBinding('@animate') animate = true;
 
-  constructor() { }
+  addFavoriteFilm() {
+    console.log('addToFavorite from card', this.film);
 
-  ngOnInit() {
-
+    this.addToFavorite.emit(this.film);
   }
-
 }

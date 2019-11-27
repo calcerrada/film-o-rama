@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 
 
@@ -14,6 +15,7 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
     MatInputModule,
     MatButtonModule,
     MatCardModule,
+    MatIconModule,
     PerfectScrollbarModule
   ],
   exports: [
@@ -22,6 +24,7 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
     MatInputModule,
     MatButtonModule,
     MatCardModule,
+    MatIconModule,
     PerfectScrollbarModule
   ]
 })

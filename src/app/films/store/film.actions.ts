@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { Film, FavoriteFilm } from '../models/film.model';
+import { Film } from '../models/film.model';
 
 export const searchFilms = createAction(
   '[Film] Search Films',
@@ -16,16 +16,16 @@ export const searchFilmsFailure = createAction(
   props<{ payload: any }>()
 );
 
-export const loadFavorites = createAction(
-  '[Film] Search Films'
+export const loadFavoriteFilms = createAction(
+  '[Film] Load Favorite Films'
 );
 
-export const loadFavoritesSuccess = createAction(
-  '[Film] Search Films Success',
-  props<{ payload: FavoriteFilm[] }>()
+export const loadFavoriteFilmSuccess = createAction(
+  '[Film] Load Favorite Films Success',
+  props<{ payload: Film[] }>()
 );
 
-export const AddFavorites = createAction(
-  '[Film] Search Films Success',
-  props<{ payload: FavoriteFilm }>()
+export const AddFavoriteFilm = createAction(
+  '[Film] Add Favorite Film',
+  props<{ payload: Film }>()
 );

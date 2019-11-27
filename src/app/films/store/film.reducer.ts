@@ -1,17 +1,17 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import * as FilmActions from './film.actions';
-import { Film, FavoriteFilm } from '../models/film.model';
+import { Film } from '../models/film.model';
 
 export const filmFeatureKey = 'film';
 
 export interface State {
   films: Film[];
-  favorites: FavoriteFilm[];
+  favoriteFilms: Film[];
 }
 
 export const initialState: State = {
-  films : null,
-  favorites: []
+  films : [],
+  favoriteFilms: []
 };
 
 const filmReducer = createReducer(
@@ -20,7 +20,7 @@ const filmReducer = createReducer(
   // on(FilmActions.searchFilms, state => state),
   on(FilmActions.searchFilmsSuccess, (state, action) => ({...state, films: [...action.payload]})),
   on(FilmActions.searchFilmsFailure, (state, action) => state),
-  on(FilmActions.loadFavoritesSuccess, (state, action) => ({...state, favorites: [...action.payload]})),
+  on(FilmActions.loadFavoriteFilmSuccess, (state, action) => ({...state, favoriteFilms: [...action.payload]})),
 
 );
 

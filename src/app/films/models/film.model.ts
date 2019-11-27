@@ -3,13 +3,16 @@ export interface Rating {
   Value: string;
 }
 
-export interface FavoriteFilm {
+export interface Film {
   Title: string;
   Year: string;
   Poster: string;
+  Type: string;
+  imdbID: string;
+  fav?: boolean;
 }
 
-export interface Film extends FavoriteFilm {
+export interface FilmDetail extends Film {
   Rated: string;
   Released: string;
   Runtime: string;
@@ -21,12 +24,10 @@ export interface Film extends FavoriteFilm {
   Language: string;
   Country: string;
   Awards: string;
-
   Ratings: Rating[];
   Metascore: string;
   imdbRating: string;
   imdbVotes: string;
-  imdbID: string;
   Type: string;
   DVD: string;
   BoxOffice: string;
@@ -34,7 +35,6 @@ export interface Film extends FavoriteFilm {
   Website: string;
   Response: string;
 }
-
 
 export interface FilmAPIResponse {
   Response: string;

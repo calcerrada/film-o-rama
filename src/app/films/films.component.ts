@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import * as fromFilm from './store/film.reducer';
+import * as filmActions from './store/film.actions';
 
 @Component({
   selector: 'app-films',
@@ -6,10 +9,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./films.component.scss']
 })
 export class FilmsComponent implements OnInit {
-  // TODO: eliminar el compoente si no se usa
-  constructor() { }
+  constructor(private store: Store<fromFilm.State>) { }
 
   ngOnInit() {
+    this.store.dispatch(filmActions.loadFavoriteFilms());
   }
 
 }

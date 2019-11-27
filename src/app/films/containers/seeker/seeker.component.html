@@ -9,7 +9,7 @@
   <div class="films">
     <perfect-scrollbar style="max-height: 100%;">
       <div class="films__list">
-        <app-film-card *ngFor="let film of fimls$ | async" [film]="film"></app-film-card>
+        <app-film-card *ngFor="let film of fimls$ | async" [film]="film" [favorite]="isFavorite(film.imdbID)" (addToFavorite)="addToFavorite($event)"></app-film-card>
       </div>
     </perfect-scrollbar>
   </div>

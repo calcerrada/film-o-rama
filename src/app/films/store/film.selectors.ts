@@ -8,4 +8,10 @@ export const selectFilmState = createFeatureSelector<fromFilm.State>(
 export const getFilms = createSelector(
   selectFilmState,
   (state) => state.films
-)
+);
+
+export const getFavoriteFilms = createSelector(
+  selectFilmState,
+  (state) => state.favoriteFilms
+);
+
