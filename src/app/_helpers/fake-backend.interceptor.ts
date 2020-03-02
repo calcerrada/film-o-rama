@@ -7,8 +7,8 @@ import { delay, dematerialize, materialize, mergeMap } from 'rxjs/operators';
 
 const users: User[] = [
   {
-    username: 'user',
-    password: 'user'
+    username: 'test',
+    password: 'test'
   }
 ];
 
