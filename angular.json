@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "newProjectRoot": "projects",
+  "newProjectRoot": "",
   "projects": {
     "film-o-rama": {
       "projectType": "application",
@@ -10,29 +10,29 @@
           "style": "scss"
         }
       },
-      "root": "",
-      "sourceRoot": "src",
+      "root": "apps\\film-o-rama",
+      "sourceRoot": "apps\\film-o-rama\\src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/film-o-rama",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.app.json",
+            "outputPath": "dist\\apps\\film-o-rama",
+            "index": "apps/film-o-rama/src/index.html",
+            "main": "apps/film-o-rama/src/main.ts",
+            "polyfills": "apps/film-o-rama/src/polyfills.ts",
+            "tsConfig": "apps\\film-o-rama\\tsconfig.app.json",
             "aot": true,
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "apps/film-o-rama/src/favicon.ico",
+              "apps/film-o-rama/src/assets"
             ],
             "styles": [
-              "src/styles/styles.scss",
+              "apps/film-o-rama/src/styles/styles.scss",
               "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
-              "src/styles/vendors/normalize.css",
-              "src/styles/fonts.scss",
-              "src/styles/custom-reset.scss"
+              "apps/film-o-rama/src/styles/vendors/normalize.css",
+              "apps/film-o-rama/src/styles/fonts.scss",
+              "apps/film-o-rama/src/styles/custom-reset.scss"
             ],
             "scripts": []
           },
@@ -40,8 +40,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "replace": "apps/film-o-rama/src/environments/environment.ts",
+                  "with": "apps/film-o-rama/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -87,18 +87,18 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
+            "main": "apps/film-o-rama/src/test.ts",
+            "polyfills": "apps/film-o-rama/src/polyfills.ts",
+            "tsConfig": "apps\\film-o-rama\\tsconfig.spec.json",
+            "karmaConfig": "apps\\film-o-rama\\karma.conf.js",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "apps/film-o-rama/src/favicon.ico",
+              "apps/film-o-rama/src/assets"
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
-              "src/styles/styles.scss",
-              "src/styles/vendors/normalize.css"
+              "apps/film-o-rama/src/styles/styles.scss",
+              "apps/film-o-rama/src/styles/vendors/normalize.css"
             ],
             "scripts": []
           }
@@ -107,25 +107,39 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
+              "apps\\film-o-rama\\tsconfig.app.json",
+              "apps\\film-o-rama\\tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
             ]
           }
-        },
+        }
+      }
+    },
+    "film-o-rama-e2e": {
+      "projectType": "application",
+      "root": "apps\\film-o-rama-e2e",
+      "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
+            "protractorConfig": "apps\\film-o-rama-e2e\\protractor.conf.js",
             "devServerTarget": "film-o-rama:serve"
           },
           "configurations": {
             "production": {
               "devServerTarget": "film-o-rama:serve:production"
             }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps\\film-o-rama-e2e\\tsconfig.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }

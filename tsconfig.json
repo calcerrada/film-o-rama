@@ -1,7 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": ".",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
@@ -17,10 +17,16 @@
     "lib": [
       "es2018",
       "dom"
-    ],"paths": {
-      "@core/*": ["src/app/core/*"],
-      "@shared/*": ["src/app/shared/*"]
-    }
+    ],
+    "paths": {
+      "@core/*": [
+        "apps/film-o-rama/src/app/core/*"
+      ],
+      "@shared/*": [
+        "apps/film-o-rama/src/app/shared/*"
+      ]
+    },
+    "rootDir": "."
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
