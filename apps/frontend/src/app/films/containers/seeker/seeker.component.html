@@ -1,0 +1,16 @@
+<div class="seeker-wrapper">
+  <div class="seeker mat-elevation-z1">
+    <mat-form-field (keydown.enter)="onSearch()">
+      <input matInput placeholder="Serach by titile" [(ngModel)]="query" />
+      <!-- <button mat-button *ngIf="query" matSuffix mat-icon-button aria-label="Clear" (click)="query = ''"></button> -->
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="onSearch()" [disabled]="!query">SEARCH</button>
+  </div>
+  <div class="films">
+    <perfect-scrollbar style="max-height: 100%;">
+      <div class="films__list">
+        <app-film-card *ngFor="let film of fimls$ | async" [film]="film" [favorite]="isFavorite(film.imdbID)" (addToFavorite)="addToFavorite($event)"></app-film-card>
+      </div>
+    </perfect-scrollbar>
+  </div>
+</div>
