@@ -1,0 +1,16 @@
+@import 'colors.scss';
+
+$font-default: 'Montserrat';
+$font-secondary: 'Lato';
+
+@mixin font-default($size: 1rem){
+  font-family: $font-default;
+  size: $size;
+  color: $text-default;
+}
+@mixin font-title($size: 2rem){
+  font-family: $font-secondary;
+  font-weight: 600;
+  font-size: $size;
+  color: $text-default;
+}

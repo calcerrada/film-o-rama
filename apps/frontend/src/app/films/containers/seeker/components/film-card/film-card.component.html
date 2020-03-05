@@ -1,0 +1,15 @@
+<mat-card class="film-card">
+  <div class="mat-card-header">
+    <div class="mat-card-header-text">
+      <div _ngcontent-jkv-c6="" class="mat-card-title" [title]="film.Title">{{ film.Title }}</div>
+      <div class="mat-card-subtitle">{{ film.Year }}</div>
+      <button mat-icon-button [disabled]="favorite" (click)="addFavoriteFilm()">
+        <mat-icon [innerText]="favorite ? 'favorite' : 'favorite_border'"> </mat-icon>
+      </button>
+    </div>
+  </div>
+  <img mat-card-image appImg [src]="film.Poster" alt="{{ film.Title }} poster" />
+  <mat-card-content>
+
+  </mat-card-content>
+</mat-card>
