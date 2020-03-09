@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-import { FavoriteFilmsService } from '@core/services/favorite-films/favorite-films.service';
-import { FilmService } from '@core/services/film/film.service';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { of } from 'rxjs';
@@ -10,6 +8,8 @@ import { Film, FilmAPIResponse } from '../models/film.model';
 import * as FilmActions from './film.actions';
 import * as fromFilm from '../store/film.reducer';
 import * as filmSelector from '../store/film.selectors';
+import { FilmService } from '../../core/services/film/film.service';
+import { FavoriteFilmsService } from '../../core/services/favorite-films/favorite-films.service';
 
 @Injectable()
 export class FilmEffects {
